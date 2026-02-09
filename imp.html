@@ -13,8 +13,11 @@
             --primary-light: #F44336;
             --secondary: #FFC107;
             --accent: #1A1A2E;
-            --light: #F7F7F7;
-            --dark: #0F0F1A;
+            --light: #ffffff;
+            --dark: rgb(15, 15, 26);
+            --gray: #f5f5f5;
+            --text: #333333;
+            --text-light: #666666;
             --gradient: linear-gradient(135deg, #D32F2F 0%, #F44336 100%);
         }
 
@@ -26,8 +29,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--light);
+            background: var(--light);
+            color: var(--text);
             overflow-x: hidden;
         }
 
@@ -36,46 +39,17 @@
             font-weight: 700;
         }
 
-        /* Logo Styles */
+        /* Logo Styles - Logo original imp.png */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
-        .logo-svg {
-            width: 50px;
+        .logo-img {
             height: 50px;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--light);
-            letter-spacing: -0.5px;
-        }
-
-        .logo-main span {
-            color: var(--primary-light);
-        }
-
-        .logo-sub {
-            font-size: 0.7rem;
-            color: var(--secondary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            width: auto;
+            display: block;
         }
 
         /* Navigation */
@@ -83,14 +57,15 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 5%;
+            padding: 0.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(15, 15, 26, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
         .nav-links {
@@ -100,7 +75,7 @@
         }
 
         .nav-links a {
-            color: var(--light);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
             position: relative;
@@ -124,7 +99,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
         /* Hero Section */
@@ -132,13 +107,10 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 5% 100px;
+            padding: 100px 5% 100px;
             position: relative;
             overflow: hidden;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(211, 47, 47, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 50%),
-                var(--dark);
+            background: var(--light);
         }
 
         .hero-content {
@@ -156,15 +128,16 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(211, 47, 47, 0.2);
-            border: 1px solid rgba(211, 47, 47, 0.3);
+            background: rgba(211, 47, 47, 0.1);
+            border: 1px solid rgba(211, 47, 47, 0.2);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.9rem;
-            color: var(--primary-light);
+            color: var(--primary);
             margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(20px);
+            font-weight: 500;
         }
 
         .hero-text h1 {
@@ -173,10 +146,11 @@
             margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(30px);
+            color: var(--dark);
         }
 
         .hero-text .highlight {
-            color: var(--primary-light);
+            color: var(--primary);
             position: relative;
             display: inline-block;
         }
@@ -188,14 +162,14 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background: rgba(255, 193, 7, 0.3);
+            background: rgba(255, 193, 7, 0.4);
             z-index: -1;
         }
 
         .hero-text p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-light);
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(30px);
@@ -235,14 +209,15 @@
         }
 
         .btn-secondary {
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            color: var(--dark);
             background: transparent;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary-light);
+            background: rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         /* Image Slider Styles */
@@ -260,8 +235,8 @@
             height: 100%;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .slider-wrapper {
@@ -296,7 +271,7 @@
             left: 0;
             right: 0;
             padding: 2rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
             transform: translateY(20px);
             opacity: 0;
             transition: all 0.4s ease;
@@ -340,14 +315,14 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.4);
             cursor: pointer;
             transition: all 0.3s;
             border: 2px solid transparent;
         }
 
         .slider-dot:hover {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .slider-dot.active {
@@ -371,9 +346,9 @@
         .slider-arrow {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -381,12 +356,14 @@
             cursor: pointer;
             pointer-events: all;
             transition: all 0.3s;
-            color: white;
+            color: var(--dark);
             font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .slider-arrow:hover {
             background: var(--gradient);
+            color: white;
             border-color: transparent;
             transform: scale(1.1);
         }
@@ -416,7 +393,7 @@
 
         .float-card {
             position: absolute;
-            background: rgba(15, 15, 26, 0.9);
+            background: rgba(15, 15, 26, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
@@ -466,7 +443,7 @@
 
         .float-desc {
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.7);
         }
 
         /* Stats Bar */
@@ -475,13 +452,14 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
             padding: 2rem 5%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
         }
 
         .stat-item {
@@ -497,19 +475,19 @@
             transform: translateY(-50%);
             height: 40px;
             width: 1px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-light);
+            color: var(--primary);
             display: block;
             font-family: 'Space Grotesk', sans-serif;
         }
 
         .stat-label {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-light);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -529,21 +507,21 @@
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--light);
+            color: var(--dark);
         }
 
         .section-header h2 span {
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
         .section-header p {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Services Grid */
+        /* Services Grid - Cards avec fond sombre */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -553,13 +531,14 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgb(15, 15, 26);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 2.5rem;
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .service-card::before {
@@ -588,7 +567,7 @@
         .service-icon {
             width: 60px;
             height: 60px;
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(211, 47, 47, 0.2);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -597,7 +576,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.3);
         }
 
         .service-card h3 {
@@ -605,18 +584,18 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
-            color: var(--light);
+            color: white;
         }
 
         .service-card p {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             position: relative;
             z-index: 1;
             font-size: 0.95rem;
         }
 
-        /* Timeline */
+        /* Timeline - Cards avec fond sombre */
         .timeline {
             max-width: 1000px;
             margin: 0 auto;
@@ -651,7 +630,7 @@
         }
 
         .timeline-content {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgb(15, 15, 26);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 15px;
@@ -659,11 +638,13 @@
             position: relative;
             margin: 0 2rem;
             transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .timeline-content:hover {
             border-color: rgba(211, 47, 47, 0.3);
             transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
         .timeline-year {
@@ -692,7 +673,7 @@
             line-height: 1.6;
         }
 
-        /* Team Section */
+        /* Team Section - Cards avec fond sombre */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -702,7 +683,7 @@
         }
 
         .team-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgb(15, 15, 26);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -710,6 +691,7 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .team-card::before {
@@ -731,44 +713,43 @@
         .team-card:hover {
             transform: translateY(-5px);
             border-color: rgba(211, 47, 47, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .team-icon {
             width: 80px;
             height: 80px;
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(211, 47, 47, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
             font-size: 2rem;
-            border: 2px solid rgba(211, 47, 47, 0.2);
+            border: 2px solid rgba(211, 47, 47, 0.3);
             transition: all 0.3s;
         }
 
         .team-card:hover .team-icon {
             background: var(--gradient);
             transform: scale(1.1);
+            border-color: transparent;
         }
 
         .team-card h3 {
-            color: var(--light);
+            color: white;
             margin-bottom: 0.5rem;
         }
 
         .team-card p {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             line-height: 1.5;
         }
 
         /* Contact Section */
         .contact-section {
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 40%),
-                rgba(255, 255, 255, 0.02);
+            background: var(--gray);
         }
 
         .contact-grid {
@@ -782,60 +763,65 @@
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
-            color: var(--light);
+            color: var(--dark);
         }
 
         .contact-info h3 span {
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
+        /* Contact Items avec fond sombre */
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 1rem;
             margin-bottom: 1.5rem;
             padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgb(15, 15, 26);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
         .contact-item:hover {
             border-color: rgba(211, 47, 47, 0.3);
             transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .contact-icon {
             width: 45px;
             height: 45px;
-            background: rgba(211, 47, 47, 0.1);
+            background: rgba(211, 47, 47, 0.2);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
             flex-shrink: 0;
-            border: 1px solid rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.3);
         }
 
         .contact-item div strong {
-            color: var(--light);
+            color: white;
             display: block;
             margin-bottom: 0.3rem;
         }
 
         .contact-item div {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
             line-height: 1.5;
         }
 
+        /* Contact Form avec fond sombre */
         .contact-form {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgb(15, 15, 26);
             padding: 2.5rem;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .form-group {
@@ -845,7 +831,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: white;
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -868,18 +854,18 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--primary-light);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         /* Footer */
         footer {
-            background: var(--accent);
+            background: var(--dark);
             padding: 3rem 5%;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -892,24 +878,17 @@
             margin-bottom: 1.5rem;
         }
 
-        .footer-logo-svg {
-            width: 60px;
-            height: 60px;
+        .footer-logo-img {
+            height: 80px;
+            width: auto;
             margin-bottom: 1rem;
-        }
-
-        .footer-logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .footer-logo-text span {
-            color: var(--primary-light);
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
         }
 
         .footer-tagline {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 2rem;
             font-style: italic;
         }
@@ -924,7 +903,7 @@
         .social-links a {
             width: 45px;
             height: 45px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -932,7 +911,7 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 1.2rem;
         }
 
@@ -944,7 +923,7 @@
         }
 
         .footer-bottom {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.85rem;
             margin-top: 2rem;
             padding-top: 2rem;
@@ -1011,6 +990,11 @@
                 display: block;
                 font-size: 1.5rem;
                 cursor: pointer;
+                color: var(--dark);
+            }
+            
+            .logo-img {
+                height: 40px;
             }
         }
 
@@ -1036,25 +1020,7 @@
 
     <nav>
         <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" stroke="white" stroke-width="1" opacity="0.3"/>
-                <circle cx="50" cy="50" r="40" stroke="white" stroke-width="1" opacity="0.2"/>
-                <circle cx="50" cy="50" r="35" stroke="#D32F2F" stroke-width="8" opacity="0.9"/>
-                <circle cx="50" cy="50" r="25" stroke="white" stroke-width="1" opacity="0.3"/>
-                <circle cx="50" cy="50" r="20" stroke="#FFC107" stroke-width="4" opacity="0.8"/>
-                <circle cx="50" cy="50" r="10" stroke="white" stroke-width="1" opacity="0.3"/>
-                <line x1="50" y1="5" x2="50" y2="95" stroke="white" stroke-width="1" opacity="0.4"/>
-                <line x1="5" y1="50" x2="95" y2="50" stroke="white" stroke-width="1" opacity="0.4"/>
-                <path d="M50 10 L45 15 M50 10 L55 15" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                <path d="M50 90 L45 85 M50 90 L55 85" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                <path d="M10 50 L15 45 M10 50 L15 55" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                <path d="M90 50 L85 45 M90 50 L85 55" stroke="white" stroke-width="1.5" opacity="0.6"/>
-                <circle cx="50" cy="50" r="3" fill="#D32F2F"/>
-            </svg>
-            <div class="logo-text">
-                <div class="logo-main">impri-nord <span>sarl</span></div>
-                <div class="logo-sub">Depuis 2005</div>
-            </div>
+            <img src="imp.png" alt="Impri-Nord Logo" class="logo-img">
         </div>
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
@@ -1227,7 +1193,7 @@
         </div>
     </section>
 
-    <section id="histoire" style="background: rgba(255,255,255,0.02);">
+    <section id="histoire" style="background: var(--gray);">
         <div class="section-header reveal">
             <h2>Notre <span>Parcours</span></h2>
             <p>De l'entreprise individuelle à la SARL de référence au Burkina Faso.</p>
@@ -1335,7 +1301,7 @@
                 </div>
             </div>
             <div class="contact-form reveal">
-                <h3 style="margin-bottom: 1.5rem; color: var(--light);">Demander un <span style="color: var(--primary-light);">devis</span></h3>
+                <h3 style="margin-bottom: 1.5rem; color: white;">Demander un <span style="color: var(--primary-light);">devis</span></h3>
                 <form id="contactForm">
                     <div class="form-group">
                         <label>Nom complet</label>
@@ -1351,7 +1317,7 @@
                     </div>
                     <div class="form-group">
                         <label>Type de service</label>
-                        <select style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6);">
+                        <select style="color: rgba(255,255,255,0.8);">
                             <option value="">Sélectionnez un service...</option>
                             <option value="numerique">Impression Numérique</option>
                             <option value="offset">Impression Offset</option>
@@ -1376,15 +1342,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <svg class="footer-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" stroke="white" stroke-width="1" opacity="0.3"/>
-                    <circle cx="50" cy="50" r="38" stroke="#D32F2F" stroke-width="8" opacity="0.9"/>
-                    <circle cx="50" cy="50" r="22" stroke="#FFC107" stroke-width="4" opacity="0.8"/>
-                    <line x1="50" y1="5" x2="50" y2="95" stroke="white" stroke-width="1" opacity="0.3"/>
-                    <line x1="5" y1="50" x2="95" y2="50" stroke="white" stroke-width="1" opacity="0.3"/>
-                    <circle cx="50" cy="50" r="3" fill="#D32F2F"/>
-                </svg>
-                <div class="footer-logo-text">impri-nord <span>sarl</span></div>
+                <img src="/mnt/kimi/upload/imp.png" alt="Impri-Nord Logo" class="footer-logo-img">
             </div>
             <p class="footer-tagline">"Nous imprimons, vous appréciez" — Depuis 2005</p>
             <div class="social-links">
@@ -1411,15 +1369,13 @@
         
         let currentSlide = 0;
         const totalSlides = slides.length;
-        const slideInterval = 5000; // 5 seconds
+        const slideInterval = 5000;
         let progressInterval;
         let autoSlideInterval;
         
         function updateSlider() {
-            // Update wrapper position
             sliderWrapper.style.transform = `translateX(-${currentSlide * 20}%)`;
             
-            // Update active classes
             slides.forEach((slide, index) => {
                 slide.classList.toggle('active', index === currentSlide);
             });
@@ -1428,7 +1384,6 @@
                 dot.classList.toggle('active', index === currentSlide);
             });
             
-            // Reset and start progress
             resetProgress();
         }
         
@@ -1463,14 +1418,8 @@
             autoSlideInterval = setInterval(nextSlide, slideInterval);
         }
         
-        // Event listeners
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-        });
-        
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-        });
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
         
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
@@ -1478,7 +1427,6 @@
             });
         });
         
-        // Pause on hover
         const sliderContainer = document.querySelector('.slider-container');
         sliderContainer.addEventListener('mouseenter', () => {
             clearInterval(autoSlideInterval);
@@ -1489,13 +1437,11 @@
             resetProgress();
         });
         
-        // Initialize slider
         resetProgress();
         
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
         
-        // Hero animations
         gsap.to(".hero-badge", {
             opacity: 1,
             y: 0,
@@ -1536,7 +1482,6 @@
             delay: 0.4
         });
         
-        // Scroll reveals
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(element => {
             gsap.to(element, {
@@ -1552,7 +1497,6 @@
             });
         });
         
-        // Timeline animation
         const timelineItems = document.querySelectorAll('.timeline-item');
         timelineItems.forEach((item, index) => {
             gsap.to(item, {
@@ -1569,7 +1513,6 @@
             });
         });
         
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1583,7 +1526,6 @@
             });
         });
         
-        // Form submission
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -1596,7 +1538,7 @@
                 color: white;
                 padding: 1rem 2rem;
                 border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
                 z-index: 10000;
                 font-weight: 500;
                 animation: slideIn 0.5s ease;
@@ -1613,7 +1555,6 @@
             e.target.reset();
         });
         
-        // Add CSS animations
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideIn {
@@ -1626,18 +1567,6 @@
             }
         `;
         document.head.appendChild(style);
-        
-        // Logo rotation on scroll
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const logo = document.querySelector('.logo-svg');
-            if (logo) {
-                logo.style.transform = `rotate(${currentScroll * 0.1}deg)`;
-            }
-            lastScroll = currentScroll;
-        });
     </script>
 </body>
-
 </html>
