@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAO Motors Luxury — Garage véhicules chinois à Ouagadougou</title>
+<style>
+  :root{--noir:#0b0e13;--carbone:#141a22;--rouge:#d90429;--rouge-clair:#ff3d3d;--blanc:#f5f6f8;--gris:#9aa3af;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--noir);color:var(--blanc);line-height:1.65;}
+  .bandeau{background:linear-gradient(90deg,var(--rouge),var(--rouge-clair));color:#fff;text-align:center;padding:9px 12px;font-weight:700;font-size:13.5px;letter-spacing:.4px;}
+  header{background:var(--carbone);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;border-bottom:1px solid #232b36;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--rouge);}
+  .logo .texte{font-size:17px;font-weight:800;letter-spacing:.5px;line-height:1.15;}
+  .logo .texte span{color:var(--rouge-clair);}
+  .logo .texte small{display:block;font-size:10.5px;font-weight:600;color:var(--gris);letter-spacing:2.5px;text-transform:uppercase;}
+  nav a{color:var(--gris);text-decoration:none;margin-left:18px;font-size:14px;font-weight:600;}
+  nav a:hover{color:var(--rouge-clair);}
+  .hero{position:relative;padding:90px 22px 70px;text-align:center;background:linear-gradient(rgba(8,10,14,.82),rgba(8,10,14,.92)),url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?fm=jpg&q=70&w=1600&auto=format&fit=crop') center/cover no-repeat;}
+  .hero .badge{display:inline-block;border:1px solid var(--rouge);color:var(--rouge-clair);padding:4px 16px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:1.5px;margin-bottom:20px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(26px,5vw,44px);font-weight:800;line-height:1.2;margin-bottom:14px;}
+  .hero h1 em{color:var(--rouge-clair);font-style:normal;}
+  .hero p{color:#c6cdd6;max-width:640px;margin:0 auto 28px;font-size:16px;}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--rouge),var(--rouge-clair));color:#fff;font-weight:800;padding:14px 34px;border-radius:10px;text-decoration:none;font-size:16px;margin:0 6px 10px;}
+  .cta.secondaire{background:transparent;border:2px solid var(--rouge);color:var(--rouge-clair);}
+  .cta:hover{filter:brightness(1.15);}
+  .chiffres{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:44px;}
+  .chiffre{text-align:center;}
+  .chiffre .n{font-size:30px;font-weight:800;color:var(--rouge-clair);}
+  .chiffre .l{font-size:12.5px;color:var(--gris);}
+  section{padding:56px 22px;}
+  .container{max-width:1000px;margin:0 auto;}
+  h2{font-size:clamp(20px,3.4vw,28px);text-align:center;margin-bottom:10px;}
+  .sous-titre{text-align:center;color:var(--gris);margin-bottom:38px;font-size:15px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+  .carte{background:var(--carbone);border:1px solid #232b36;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;}
+  .carte:hover{transform:translateY(-4px);border-color:var(--rouge);}
+  .carte img{width:100%;height:150px;object-fit:cover;display:block;}
+  .carte .corps{padding:20px 20px 24px;}
+  .carte h3{font-size:16.5px;margin-bottom:8px;color:var(--rouge-clair);}
+  .carte p{font-size:13.5px;color:var(--gris);}
+  .pourquoi{background:linear-gradient(rgba(10,13,18,.9),rgba(10,13,18,.95)),url('https://images.unsplash.com/photo-1637970067784-927e66e07e36?fm=jpg&q=70&w=1600&auto=format&fit=crop') center/cover fixed no-repeat;}
+  .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .point{border-left:3px solid var(--rouge);padding:10px 18px;background:#0e131ab3;border-radius:0 10px 10px 0;}
+  .point h4{font-size:15px;color:var(--rouge-clair);}
+  .point p{font-size:13.5px;color:var(--gris);}
+  .galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px;}
+  .galerie img{width:100%;height:170px;object-fit:cover;border-radius:12px;border:1px solid #232b36;}
+  .maps{background:#0e131a;border:1px solid #232b36;border-radius:14px;padding:26px;text-align:center;max-width:640px;margin:0 auto;}
+  .maps .pin{font-size:40px;}
+  .maps h3{font-size:18px;margin:10px 0 6px;}
+  .maps p{color:var(--gris);font-size:14.5px;}
+  .btn-map{display:inline-block;margin-top:16px;background:linear-gradient(90deg,var(--rouge),var(--rouge-clair));color:#fff;text-decoration:none;padding:11px 24px;border-radius:9px;font-weight:700;font-size:14px;}
+  .btn-map:hover{filter:brightness(1.15);}
+  .contact{background:var(--carbone);text-align:center;}
+  .tel-geant{font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--rouge-clair);letter-spacing:1px;}
+  .contact p{color:var(--gris);margin:8px 0 22px;}
+  .wa{display:inline-block;background:#25d366;color:#fff;text-decoration:none;padding:14px 34px;border-radius:10px;font-weight:800;font-size:16px;}
+  .wa:hover{background:#1eb858;}
+  footer{background:#07090c;color:#6b7280;text-align:center;padding:22px;font-size:12.5px;}
+  footer strong{color:#fff;}
+  @media(max-width:640px){nav{display:none;} .hero{padding:60px 16px 50px;}}
+</style>
+</head>
+<body>
+
+<div class="bandeau">🔧 Spécialiste diagnostic & réparation véhicules chinois — Thermiques & Électriques · Ouagadougou</div>
+
+<header>
+  <div class="logo">
+    <img src="logo_sao.jpg" alt="Logo SAO Motors Luxury">
+    <div class="texte">SAO <span>MOTORS</span><small>Luxury · Ouagadougou</small></div>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pourquoi">Pourquoi nous</a>
+    <a href="#localisation">Localisation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="badge">Diagnostic · Réparation · Pièces</span>
+  <h1>Votre véhicule chinois, <em>entre de bonnes mains.</em></h1>
+  <p>Thermiques & électriques : diagnostic précis, réparation fiable et pièces d'origine. Une expertise garantie, un service qui vous fait gagner du temps.</p>
+  <a class="cta" href="https://wa.me/22679755555?text=Bonjour%20SAO%20Motors%20Luxury%2C%20j%E2%80%99aimerais%20un%20diagnostic%20pour%20mon%20v%C3%A9hicule%20%F0%9F%9A%97">💬 Prendre RDV sur WhatsApp</a>
+  <a class="cta secondaire" href="tel:+22679755555">📞 79 75 55 55</a>
+  <div class="chiffres">
+    <div class="chiffre"><div class="n">20 000+</div><div class="l">clients & abonnés</div></div>
+    <div class="chiffre"><div class="n">100%</div><div class="l">pièces d'origine</div></div>
+    <div class="chiffre"><div class="n">Thermique</div><div class="l">& électrique</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <h2>Nos services</h2>
+    <p class="sous-titre">Tout ce qu'il faut pour entretenir et réparer votre véhicule chinois, au même endroit.</p>
+    <div class="grid">
+      <div class="carte">
+        <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Diagnostic électronique">
+        <div class="corps"><h3>🔍 Diagnostic électronique</h3><p>Lecture complète des calculateurs et détection précise des pannes — thermiques comme électriques.</p></div>
+      </div>
+      <div class="carte">
+        <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Réparation thermique">
+        <div class="corps"><h3>⚙️ Réparation thermique</h3><p>Moteurs, embrayages, freinage, climatisation : des réparations soignées avec des pièces d'origine.</p></div>
+      </div>
+      <div class="carte">
+        <img src="https://images.unsplash.com/photo-1704475336842-0ab3798abf0e?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Véhicules électriques">
+        <div class="corps"><h3>🔋 Véhicules électriques</h3><p>Batteries, moteurs électriques, électronique de puissance : une expertise rare au Burkina.</p></div>
+      </div>
+      <div class="carte">
+        <img src="https://images.unsplash.com/photo-1527383418406-f85a3b146499?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Pièces et accessoires">
+        <div class="corps"><h3>🧰 Pièces & accessoires</h3><p>Pièces et accessoires d'origine pour toutes les marques chinoises courantes, disponibles rapidement.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="container">
+    <h2>Pourquoi choisir SAO Motors Luxury ?</h2>
+    <p class="sous-titre">La confiance de milliers de clients, un engagement simple : le travail bien fait.</p>
+    <div class="points">
+      <div class="point"><h4>⚡ Expertise garantie</h4><p>Des techniciens spécialisés sur les véhicules chinois, pas des généralistes.</p></div>
+      <div class="point"><h4>🛡️ Service fiable</h4><p>Des délais tenus et un travail contrôlé avant restitution du véhicule.</p></div>
+      <div class="point"><h4>✅ Pièces d'origine</h4><p>Des pièces certifiées, pour une réparation qui dure.</p></div>
+      <div class="point"><h4>📍 À Ouaga 2000</h4><p>Un garage accessible, proche de vous, avec un accueil rapide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="galerie">
+  <div class="container">
+    <h2>Notre atelier</h2>
+    <p class="sous-titre">Un environnement professionnel pour des véhicules impeccables.</p>
+    <div class="galerie">
+      <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Atelier">
+      <img src="https://images.unsplash.com/photo-1594535182308-8ffefbb661e1?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Recharge électrique">
+      <img src="https://images.unsplash.com/photo-1606577924006-27d39b132ae2?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Moteur">
+    </div>
+  </div>
+</section>
+
+<section id="localisation">
+  <div class="container">
+    <h2>Nous trouver</h2>
+    <p class="sous-titre">Garage SAO Motors Luxury — Ouaga 2000, Ouagadougou</p>
+    <div class="maps">
+      <div class="pin">📍</div>
+      <h3>SAO Motors Luxury</h3>
+      <p>Ouaga 2000, Ouagadougou · Burkina Faso<br>Ouvert du lundi au samedi</p>
+      <a class="btn-map" href="https://maps.app.goo.gl/3hmCATLt7anaEjYN9" target="_blank">🗺 Voir l'itinéraire sur Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Un diagnostic ? Une panne ?</h2>
+    <p>Écrivez-nous sur WhatsApp, on vous répond rapidement.</p>
+    <div class="tel-geant">📞 79 75 55 55</div>
+    <p>Ouagadougou — véhicules thermiques & électriques</p>
+    <a class="wa" href="https://wa.me/22679755555?text=Bonjour%20SAO%20Motors%20Luxury%2C%20j%E2%80%99aimerais%20un%20diagnostic%20pour%20mon%20v%C3%A9hicule%20%F0%9F%9A%97">💬 Écrire sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <strong>SAO MOTORS LUXURY</strong> · Garage spécialiste véhicules chinois — Ouaga 2000, Ouagadougou<br>
+  © 2026 SAO Motors Luxury. Tous droits réservés. · Photos : démo (Unsplash)
+</footer>
+
+</body>
+</html>
